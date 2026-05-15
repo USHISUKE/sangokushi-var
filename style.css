@@ -1,0 +1,208 @@
+:root {
+  color-scheme: light;
+  --bg: #f8f5ef;
+  --surface: #fffdfa;
+  --ink: #241d18;
+  --muted: #6d625b;
+  --line: #d9cec4;
+  --accent: #b4262f;
+  --accent-dark: #871a22;
+  --success: #176a3a;
+  --fail: #8a1c24;
+  --focus: #1f6feb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100dvh;
+}
+
+.screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 20px 16px;
+}
+
+.content {
+  width: min(100%, 440px);
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 20px 0 24px;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 8vw, 2.35rem);
+  line-height: 1.25;
+  letter-spacing: 0;
+  font-weight: 800;
+}
+
+.app-title {
+  text-align: center;
+  width: 100%;
+}
+
+.lead {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.judge-form {
+  display: grid;
+  gap: 14px;
+}
+
+input {
+  width: 100%;
+  min-height: 58px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 12px 14px;
+  font-size: 1.25rem;
+}
+
+input:focus,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+button {
+  width: 100%;
+  min-height: 58px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.16rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  background: #a9a09a;
+  cursor: wait;
+}
+
+button.secondary {
+  margin-top: 28px;
+  background: var(--ink);
+}
+
+.error {
+  min-height: 1.5em;
+  margin: -6px 0 0;
+  color: var(--fail);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.load-message {
+  min-height: 1.5em;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.result-area {
+  margin-top: 28px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.reading-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.result-reading {
+  margin: 4px 0 22px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.result-status {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 10vw, 3rem);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.result-status.success {
+  color: var(--success);
+}
+
+.result-status.fail {
+  color: var(--fail);
+}
+
+.result-names {
+  font-size: 1.35rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+footer {
+  width: min(100%, 440px);
+  margin: 28px auto 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 520px) {
+  .screen {
+    padding-top: 48px;
+  }
+}

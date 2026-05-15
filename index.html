@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>つなげて！ 名乗って！ 三国志　VAR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <section id="inputScreen" class="screen" aria-labelledby="appTitle">
+        <div class="content">
+          <h1 id="appTitle" class="app-title">つなげて！ 名乗って！<br>三国志　VAR</h1>
+          <p class="lead">人物名をひらがなで入力</p>
+
+          <form id="judgeForm" class="judge-form" novalidate>
+            <label class="sr-only" for="nameInput">人物名の読み</label>
+            <input
+              id="nameInput"
+              name="nameInput"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              placeholder="例：そうそう"
+              aria-describedby="inputError"
+            >
+            <p id="inputError" class="error" aria-live="polite"></p>
+            <button id="judgeButton" type="submit">判定</button>
+          </form>
+
+          <p id="loadMessage" class="load-message" aria-live="polite">判定データを読み込み中...</p>
+        </div>
+        <footer>©USHISUKE</footer>
+      </section>
+
+      <section id="resultScreen" class="screen hidden" aria-labelledby="resultTitle">
+        <div class="content">
+          <h1 id="resultTitle" class="app-title">つなげて！ 名乗って！<br>三国志　VAR</h1>
+
+          <div class="result-area" aria-live="polite">
+            <p class="reading-label">入力した読み</p>
+            <p id="resultReading" class="result-reading"></p>
+            <p id="resultStatus" class="result-status"></p>
+            <div id="resultNames" class="result-names"></div>
+          </div>
+
+          <button id="backButton" type="button" class="secondary">戻る</button>
+        </div>
+        <footer>©USHISUKE</footer>
+      </section>
+    </main>
+  </body>
+</html>
